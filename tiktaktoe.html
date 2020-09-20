@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+    <table>
+        <input type="button" id='START' onclick="" value="START">
+        <tr>
+            <td>
+                <!--<button name='one' type='button' onclick="fill('one')">_</button>-->
+                <input type="button" id='one' onclick="fill('one')" value="-">
+            </td>
+            <td>
+                <input type="button" id='two' onclick="fill('two')" value="-">
+            </td>
+            <td>
+                <input type="button" id='three' onclick="fill('three')" value="-">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id='four' onclick="fill('four')" value="-">
+            </td>
+            <td>
+                <input type="button" id='five' onclick="fill('five')" value="-">
+            </td>
+            <td>
+                <input type="button" id='six' onclick="fill('six')" value="-">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id='seven' onclick="fill('seven')" value="-">
+            </td>
+            <td>
+                <input type="button" id='eight' onclick="fill('eight')" value="-">
+            </td>
+            <td>
+                <input type="button" id='nine' onclick="fill('nine')" value="-">
+            </td>
+        </tr>
+
+    </body>
+    
+</html>
+<script>
+
+   var b=false
+    
+    var a=0  
+    
+    function fill(btn){
+        b=document.getElementById(btn).value
+        if(b=="-"){
+        a=a+1
+        console.log(a)
+        console.log(btn)
+        if(a%2==0){
+            document.getElementById(btn).value="X" ;
+        }
+        else{
+            document.getElementById(btn).value="O" ;
+        }
+        
+    }
+    if(document.getElementById('one').value==document.getElementById('two').value &&
+     document.getElementById('one').value==document.getElementById('three').value && document.getElementById('one').value!="-" )
+    {
+b=true
+    }
+    if(document.getElementById('four').value==document.getElementById('five').value &&
+     document.getElementById('four').value==document.getElementById('six').value && document.getElementById('four').value!="-")
+    {
+b=true
+    }
+    if(document.getElementById('seven').value==document.getElementById('eight').value &&
+     document.getElementById('seven').value==document.getElementById('nine').value && document.getElementById('seven').value!="-")
+    {
+b=true
+    }
+    if(document.getElementById('one').value==document.getElementById('four').value &&
+     document.getElementById('one').value==document.getElementById('seven').value && document.getElementById('one').value!="-")
+    {
+b=true
+    }
+    if(document.getElementById('two').value==document.getElementById('five').value &&
+     document.getElementById('two').value==document.getElementById('eight').value && document.getElementById('two').value!="-")
+    {
+b=true
+    }
+    if(document.getElementById('three').value==document.getElementById('six').value &&
+     document.getElementById('three').value==document.getElementById('nine').value && document.getElementById('six').value!="-")
+    {
+b=true
+    }
+    if(document.getElementById('one').value==document.getElementById('five').value &&
+     document.getElementById('one').value==document.getElementById('nine').value && document.getElementById('one').value!="-")
+    {
+b=true
+    }
+    if(document.getElementById('three').value==document.getElementById('five').value &&
+     document.getElementById('three').value==document.getElementById('seven').value && document.getElementById('three').value!="-")
+    {
+b=true
+    }
+   if(b=true && a%2==0) {
+     document.getElementById('START').value="PLAYER2 WON,CLICK TO RESTART "
+     if(b=true && a%2!=0){
+        document.getElementById('START').value="PLAYER1 WON,CLICK TO RESTART "
+     }
+   }
+   else{
+       if(document.getElementById('one').value && document.getElementById('two').value && document.getElementById('three').value &&
+        document.getElementById('four').value && document.getElementById('five').value && document.getElementById('six').value
+        && document.getElementById('eight').value && document.getElementById('nine').value && document.getElementById('seven').value){
+            document.getElementById('START').value="ITS A TIE,CLICK TO RESTART"
+        }
+   }
+ 
+    }
+    
+</script>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <center>
+<h1><input type="text" id="textboxText" value=""></h1>
+<table>
+<tr>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+1">1</button></td>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+2">2</button></td>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+3">3</button></td>
+</tr>
+<tr>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+4">4</button></td>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+5">5</button></td>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+6">6</button></td>
+</tr>
+<tr>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+7">7</button></td>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+8">8</button></td>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10+9">9</button></td>
+</tr>
+<tr>
+    <td><button onclick="operation(1)">-</button></td>
+    <td><button onclick="document.getElementById('textboxText').value=getA()*10">0</button></td>
+    <td><button onclick="operation(2)">+</button></td>
+</tr>
+<tr>
+    <td><button onclick="operation(3)">*</button></td>
+    <td><button onclick="operation(4)">/</button></td>
+    <td><button onclick="equal()">=</button></td>
+</tr>
+</table>
+</center>
+</body>
+<script>
+   
+    var a
+    var b
+    var op
+    var secondNum=0
+    var result=0
+    function getA(){
+        a=document.getElementById("textboxText").value
+        console.log(a)
+        return a
+    }
+
+    function operation(operationType){
+        switch(operationType){
+            case 1:{
+                b=document.getElementById("textboxText").value*1
+                document.getElementById("textboxText").value="" 
+                op="-"
+            }
+            break
+            case 2:{
+                b=document.getElementById("textboxText").value*1
+                document.getElementById("textboxText").value="" 
+                op="+"
+            }
+            break
+            case 3:{
+                b=document.getElementById("textboxText").value*1
+                document.getElementById("textboxText").value="" 
+                op="*"
+            }
+            break
+            case 4:{
+                b=document.getElementById("textboxText").value*1
+                document.getElementById("textboxText").value="" 
+                op="/"
+            }
+        
+        }
+    }
+
+    function equal(){
+        
+        secondNum=document.getElementById("textboxText").value*1
+       
+        switch(op){
+            case "-":{
+                result=b-secondNum
+                document.getElementById("textboxText").value=result
+            }
+            break
+            case "+":{
+                result=b+secondNum
+                 document.getElementById("textboxText").value=result
+            }
+            break
+            case "*":{
+                result=b*secondNum
+                document.getElementById("textboxText").value=result
+            }
+            break
+            case "/":{
+                result=b/secondNum
+                document.getElementById("textboxText").value=result
+            }
+        }
+    }
+
+</script>
